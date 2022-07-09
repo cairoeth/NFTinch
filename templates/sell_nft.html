@@ -109,13 +109,13 @@
                                        <span style="margin-top: 4rem;padding-top: 10px;" class="lead mt-3 d-block">Price</span>
                                        <div class="card-porduct-price d-flex align-items-center mb-3 color-price-up">
                                           <h4 class="d-flex align-items-center">
-                                              <input type="number" name="eth" class="currencyField form-control bg-transprant" placeholder="ETH">
+                                              <input type="number" name="eth" id="eth_value" class="currencyField form-control bg-transprant" placeholder="WETH">
                                           </h4><h4 class="ms-2">≈ $</h4>
                                           <h4 id="price" class="ms-2"></h4>
                                        </div>
                                        <div class="d-flex align-items-top flex-wrap">
-                                          <div class="pe-3">
-                                                <div style="margin-bottom: 21px;" class="input-group">
+                                           <div class="pe-3">
+                                               <div style="margin-bottom: 21px;" class="input-group">
                                                     <span class="input-group-text">Expires</span>
                                                     <select onchange="select_change()" id="expire_select" class="form-select" aria-label="Select expire time">
                                                         <option value="1" selected>1 minute</option>
@@ -134,7 +134,7 @@
                                                     </select>
                                                </div>
 
-                                                <div style="margin-bottom: 21px;display: none" id="custom_expire" class="form-row align-items-center">
+                                               <div style="margin-bottom: 21px;display: none" id="custom_expire" class="form-row align-items-center">
                                                     <div class="col-auto">
                                                       <label class="sr-only" for="hour_custom">Hours</label>
                                                       <div class="input-group mb-2">
@@ -155,14 +155,14 @@
                                                     </div>
                                                 </div>
 
-                                              <div style="margin-bottom: 0.75rem;" class="form-check">
+                                               <div style="margin-bottom: 0.75rem;" class="form-check">
                                                   <input class="form-check-input" type="checkbox" value="" onchange="another_receiver()" id="flexCheckDefault">
                                                   <label class="form-check-label" for="flexCheckDefault">
-                                                      Receive ETH to another wallet
+                                                      Receive WETH to another wallet
                                                   </label>
                                               </div>
 
-                                              <div style="display: none;margin-bottom: 21px;" id="another_address_form">
+                                               <div style="display: none;margin-bottom: 21px;" id="another_address_form">
                                                   <div class="input-group mb-2">
                                                       <div class="input-group-prepend">
                                                           <div class="input-group-text">Address</div>
@@ -171,7 +171,7 @@
                                                   </div>
                                               </div>
 
-                                              <a href="#" data-bs-toggle="modal" data-bs-target="#walletconnect" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn m-1">
+                                               <a id="sell_submit" data-bs-toggle="modal" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn m-1">
                                                    <span class="me-2">
                                                          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"></path>
@@ -201,81 +201,15 @@
                </div>
          </div>
       </div>
-      
-      <!-- wallet Connect-->
-      <div class="modal fade" id="walletconnect" tabindex="-1"  aria-hidden="true">
-         <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title  fw-bold">Connect to a wallet</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <ul class="list-unstyled">
-                     <li class="mb-3">
-                        <div class="card">
-                           <div class="card-body">
-                              <a href="#" title="Metamask">
-                              <div class="d-flex justify-content-between align-items-center">
-                                 <div class="info-wallet lead">
-                                    Metamask
-                                 </div>
-                                 <div class="icon-wallet">
-                                    <img src="../dist/assets/images/wallet/metamask.svg" alt="" class="img-fluid">
-                                 </div>
-                              </div>
-                              </a>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="mb-3">
-                        <div class="card">
-                           <div class="card-body">
-                              <a href="#" title="Binance">
-                              <div class="d-flex justify-content-between align-items-center">
-                                 <div class="info-wallet lead">
-                                    Binance
-                                 </div>
-                                 <div class="icon-wallet">
-                                    <img src="../dist/assets/images/wallet/binance.svg" alt="" class="img-fluid">
-                                 </div>
-                              </div>
-                              </a>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="mb-3">
-                        <div class="card">
-                           <div class="card-body">
-                              <a href="#" title="Binance">
-                              <div class="d-flex justify-content-between align-items-center">
-                                 <div class="info-wallet lead">
-                                    Wazirx   
-                                 </div>
-                                 <div class="icon-wallet">
-                                    <img src="../dist/assets/images/wallet/wazirx.svg" alt="" class="img-fluid">
-                                 </div>
-                              </div>
-                              </a>
-                           </div>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-               <div class="modal-footer text-center justify-content-center">
-                  <span class="d-flex justify-content-center w-100">By connecting your wallet, you agree to our</span>
-                  <a href="#" class="text-primary">Terms of Service</a> and  <a href="#" class="text-primary">Privacy Policy</a>
-               </div>
-            </div>
-         </div>
-      </div>
     </div>
 
     <!-- Terrible way to pass opensea api key, ONLY FOR DEVELOPMENT -->
     <input type="hidden" id="api" name="variable" value="{{ api }}">
 
+    <input type="hidden" id="contract_value" name="variable" value="{{ contract }}">
+    <input type="hidden" id="id_value" name="variable" value="{{ id }}">
+
     <script src="https://unpkg.com/es7-object-polyfill"></script>
-    <script type="module" src="{% static 'script.js' %}"></script>
 
     <!-- Jquery Core Js -->
     <script src="{% static 'bundles/libscripts.bundle.js' %}"></script>
@@ -285,6 +219,9 @@
 
     <!-- Jquery Page Js -->
     <script src="{% static 'template.js' %}"></script>
+
+    <!-- Limit Order Integration -->
+    <script type="module" src="{% static 'limitorder.js' %}"></script>
 
     <script>
         function select_change() {
@@ -330,6 +267,11 @@
     </script>
 
     <style>
+
+        a:hover {
+         cursor:pointer;
+        }
+
       .rounded-md {
         border-radius: 0.375rem;
       }

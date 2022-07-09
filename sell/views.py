@@ -32,4 +32,5 @@ def sell_nft(request, contract, id):
     title = response['name']
     description = response['description']
 
-    return render(request, 'sell_nft.html', {'api': config('OPENSEA'), 'image_url': image_url, 'title': title, 'description': description})
+    return render(request, 'sell_nft.html', {'api': config('OPENSEA'), 'image_url': image_url, 'title': title,
+                                             'description': description, 'contract': contract, 'id': id})

@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.ethereum.on("accountsChanged", async () => {
     accountAddress = await connect();
     document.getElementById("container").innerHTML = "";
-    console.log("new account");
     renderTokensForOwner(accountAddress);
   })
 });
