@@ -1,0 +1,599 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NFT Marketplace - 1inch</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"> <!-- Favicon-->
+
+    <!-- Project css file -->
+    <link rel="stylesheet" href="{% static 'css/custom.style.min.css' %}">
+</head>
+<body>
+    <div id="IUC" class="theme-blue">
+        
+      <!-- Top Header -->
+      <nav class="navbar navbar-expand-xl py-lg-2 lp-menu">
+         <div class="container py-2 rounded">
+            <a class="navbar-brand pt-2 order-1" href="/" title="Logo">
+               <img src="https://cryptologos.cc/logos/1inch-1inch-logo.png" alt="1inch" width="50px" height="50px">
+               <!--<span class="fw-bold  fs-5 px-2">1inch</span>-->
+            </a>
+            <div class="d-flex align-items-center order-2 order-md-2 order-xl-3">
+               <form class="d-md-flex d-none align-items-center">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#walletconnect" class="text-white bg-primary-gradient avatar rounded-circle d-flex align-items-center justify-content-center mx-2">
+                        <i class="bi bi-wallet2 fs-5"></i>
+                  </a>
+               </form>
+               <div class="d-flex align-items-center">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                     <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                  </button>
+               </div>
+            </div>
+            <div class="collapse navbar-collapse order-3 order-md-3 order-xl-2" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item"><a class="nav-link me-2 lead active" href="/">Buy</a></li>
+                  <li class="nav-item"><a class="nav-link me-2 lead" href="/sell">Sell</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+
+      <!-- Discover ITEAM-->
+      <div class="section pb-0">
+         <div class="container">
+            <div class="row g-3 my-5">
+               <div class="col-lg-12 col-xl-12">
+                  <div class="row g-0 justify-content-end mb-5 border-bottom pb-3">
+                     <div class="col-lg-3">
+                        <div class="input-group mx-2">
+                           <span class="input-group-text bg-transprant"><i class="fa fa-search"></i></span>
+                           <input type="search" class="form-control bg-transprant" placeholder="Type of search">
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 16px;">Filter</button>
+                        <div class="dropdown-menu" style="width: 200px;">
+                           <div class="card-body">
+                              <div class="filter">
+                                 <ul class="menu-list">
+                                    <li class="fw-bold">NFT State</li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                          <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="buynow">
+                                             <label class="form-check-label" for="buynow">Buy Now</label>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="onauction">
+                                             <label class="form-check-label" for="onauction">On Auction</label>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="genesisnftss">
+                                             <label class="form-check-label" for="genesisnftss">Genesis NFTs</label>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="sold">
+                                             <label class="form-check-label" for="sold">Sold</label>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="hasoffers">
+                                             <label class="form-check-label" for="hasoffers">Has Offers</label>
+                                          </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="hassplits">
+                                             <label class="form-check-label" for="hassplits">Has Splits</label>
+                                       </div>
+                                    </li>
+                                    <li class="fw-bold">Categories</li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="art">
+                                             <label class="form-check-label" for="art">Art</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Music">
+                                             <label class="form-check-label" for="Music">Music</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="SportsGames">
+                                             <label class="form-check-label" for="SportsGames">Sports/Games</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Utility">
+                                             <label class="form-check-label" for="Utility">Utility</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Brands">
+                                             <label class="form-check-label" for="Brands">Brands</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Influencers">
+                                             <label class="form-check-label" for="Influencers">Influencers</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Virtualworld">
+                                             <label class="form-check-label" for="Virtualworld">Virtual world</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Memes">
+                                             <label class="form-check-label" for="Memes">Memes</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Photography">
+                                             <label class="form-check-label" for="Photography">Photography</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="Tradingcards">
+                                             <label class="form-check-label" for="Tradingcards">Trading cards</label>
+                                       </div>
+                                    </li>
+                                    <li class="fw-bold">Market </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="primary">
+                                             <label class="form-check-label" for="primary">Primary</label>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="">
+                                             <label class="form-check-label">secondary</label>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-3">
+                           <div class="input-group">
+                              <span class="input-group-text">Sort By</span>
+                              <select class="form-select" aria-label="Default select example">
+                                 <option selected>Date Listed: Newest</option>
+                                 <option value="1">Date Listed: Oldest</option>
+                                 <option value="2">Price: Highest</option>
+                                 <option value="3">Price: Lowest</option>
+                              </select>
+                           </div>
+                     </div>
+                  </div>
+                  <div class="row g-3 row-deck box-set">      
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/1.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Human Art</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                          <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                          <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                       </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/4.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Fresh Tea</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                       <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                       <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                    </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/6.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Ink Duck</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                       <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                       <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                    </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/7.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Face Art</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                       <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                       <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                    </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/10.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">3D Gun</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                          <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                          <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                       </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/9.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Line Men</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                          <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                          <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                       </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/11.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Game Ball</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                          <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                          <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                       </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-product-style border border-primary rounded p-3">
+                           <div class="card-product-image position-relative">
+                              <img class="img-fluid rounded-3 w-100" src="{% static 'images/product/13.jpg' %}" alt="title">
+                           </div>
+                           <div class="card-product-content pt-3 mt-3 border-top">
+                              <a class="card-product-collection mb-2 d-inline-block" href="collection.html">
+                                 <p class="d-flex align-items-center mb-2">
+                                    Super_color 
+                                    <span class="ms-2">
+                                          <i class="bi bi-check-circle-fill color-light-success"></i>
+                                    </span>
+                                 </p>
+                              </a>
+                              <h5 class="mb-2"><a href="bid.html">Paint Brush</a></h5>
+                              <div class="card-porduct-price d-flex align-items-center text-muted">
+                                 <p class="d-flex align-items-center mb-2">
+                                    <span class="me-1">
+                                       <i class="bi bi-currency-bitcoin text-muted"></i>
+                                    </span>
+                                    0.008 ETH
+                                 </p>
+                                 <p class="ms-2 mb-2">≈$26.69</p>
+                              </div>
+                              <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn">
+                                 <span class="me-2">
+                                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"/>
+                                          <path opacity="0.2" d="M7.756 15.193C7.1 14.496 7.1 13.702 7.746 13.056L11.976 8.82599C12.046 8.76199 12.526 8.33899 13.1 8.33899C13.229 8.33899 13.622 8.33899 14.108 8.80999L15.165 9.88099L8.811 16.247L7.756 15.193ZM16.943 22.254L21.183 18.014C21.829 17.368 21.829 16.574 21.17 15.874L20.117 14.836L13.751 21.19L14.815 22.253C15.142 22.58 15.474 22.739 15.829 22.739C16.292 22.74 16.704 22.455 16.943 22.254Z" fill="var(--text-color)"/>
+                                          <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"/>
+                                       </svg>
+                                 </span>
+                                 PLACE BID
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>  
+               </div>
+            </div>
+         </div>
+      </div>
+
+       <!-- Pagination -->
+      <div class="section pb-0" style="padding-top: 0px;">
+         <div class="container">
+            <div class="row g-3 my-5">
+               <div class="col-lg-12 col-xl-12">
+                  <div class="row g-0 mb-5 border-bottom pb-3">
+                     <div class="col-lg-12 float-right">
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                               <!--<li class="page-item disabled">-->
+                                 <!--<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
+                               <!--</li>-->
+                               <li class="page-item active">
+                                  <a class="page-link" href="/">1</a>
+                               </li>
+                               <li class="page-item" aria-current="page">
+                                 <a class="page-link" href="/page/2">2</a>
+                               </li>
+                               <li class="page-item">
+                                  <a class="page-link" href="/page/3">3<a>
+                               </li>
+                            </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- wallet Connect-->
+      <div class="modal fade" id="walletconnect" tabindex="-1"  aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title  fw-bold">Connect to a wallet</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <ul class="list-unstyled">
+                     <li class="mb-3">
+                        <div class="card">
+                           <div class="card-body">
+                              <div class="d-flex justify-content-between align-items-center">
+                                 <div class="info-wallet lead">
+                                    Metamask
+                                 </div>
+                                 <div class="icon-wallet">
+                                    <img src="{% static 'images/wallet/metamask.svg' %}" alt="" class="img-fluid">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <!--<li class="mb-3">-->
+                        <!--<div class="card">-->
+                           <!--<div class="card-body">-->
+                              <!--<div class="d-flex justify-content-between align-items-center">-->
+                                 <!--<div class="info-wallet lead">-->
+                                 <!--Binance-->
+                                 <!--</div>-->
+                                 <!--<div class="icon-wallet">-->
+                                    <!--<img src="../dist/assets/images/wallet/binance.svg" alt="" class="img-fluid">-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                           <!--</div>-->
+                        <!--</div>-->
+                     <!--</li>-->
+                     <!--<li class="mb-3">-->
+                        <!--<div class="card">-->
+                           <!--<div class="card-body">-->
+                              <!--<div class="d-flex justify-content-between align-items-center">-->
+                                 <!--<div class="info-wallet lead">-->
+                                 <!--Wazirx   -->
+                                 <!--</div>-->
+                                 <!--<div class="icon-wallet">-->
+                                    <!--<img src="../dist/assets/images/wallet/wazirx.svg" alt="" class="img-fluid">-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                           <!--</div>-->
+                        <!--</div>-->
+                     <!--</li>-->
+                  </ul>
+               </div>
+               <div class="modal-footer text-center justify-content-center">
+                  <span class="d-flex justify-content-center w-100">By connecting your wallet, you agree to our</span>
+                  <a href="#" class="text-primary">Terms of Service</a> and  <a href="#" class="text-primary">Privacy Policy</a>
+               </div>
+            </div>
+         </div>
+      </div>
+        
+    </div>
+    <!-- Jquery Core Js -->
+    <script src="{% static 'bundles/libscripts.bundle.js' %}"></script>
+
+    <!-- Plugin Js -->
+    <script src="{% static 'bundles/countdown.bundle.js' %}"></script>
+
+    <!-- Jquery Page Js -->
+    <script src="{% static 'template.js' %}"></script>
+</body>
+</html> 
