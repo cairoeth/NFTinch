@@ -117,7 +117,7 @@
                                           <div class="pe-3">
                                                 <div style="margin-bottom: 21px;" class="input-group">
                                                     <span class="input-group-text">Expires</span>
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <select onchange="select_change()" id="expire_select" class="form-select" aria-label="Select expire time">
                                                         <option value="1" selected>1 minute</option>
                                                         <option value="2">10 minute</option>
                                                         <option value="3">1 Hour</option>
@@ -130,9 +130,48 @@
                                                         <option value="10">1 Year</option>
                                                         <option value="11">2 Years</option>
                                                         <option value="12">3 Years</option>
+                                                        <option value="13">Custom</option>
                                                     </select>
                                                </div>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#walletconnect" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn m-1">
+
+                                                <div style="margin-bottom: 21px;display: none" id="custom_expire" class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                      <label class="sr-only" for="hour_custom">Hours</label>
+                                                      <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                          <div class="input-group-text">Hours</div>
+                                                        </div>
+                                                        <input type="number" min="0" max="87600" class="form-control" id="hour_custom" placeholder="10">
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                      <label class="sr-only" for="minute_custom">Minutes</label>
+                                                      <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                          <div class="input-group-text">Minutes</div>
+                                                        </div>
+                                                        <input type="number" min="0" max="59" class="form-control" id="minute_custom" placeholder="5">
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                              <div style="margin-bottom: 0.75rem;" class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" onchange="another_receiver()" id="flexCheckDefault">
+                                                  <label class="form-check-label" for="flexCheckDefault">
+                                                      Receive ETH to another wallet
+                                                  </label>
+                                              </div>
+
+                                              <div style="display: none;margin-bottom: 21px;" id="another_address_form">
+                                                  <div class="input-group mb-2">
+                                                      <div class="input-group-prepend">
+                                                          <div class="input-group-text">Address</div>
+                                                      </div>
+                                                      <input type="text" class="form-control" id="address_receiver" placeholder="0x">
+                                                  </div>
+                                              </div>
+
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#walletconnect" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn m-1">
                                                    <span class="me-2">
                                                          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path opacity="0.6" d="M5.5 27.5V26C5.503 25.752 5.588 24.5 7 24.5H21C21.248 24.503 22.5 24.589 22.5 26V27.5H5.5ZM16.937 22.257L21.187 18.007C22.181 17.013 21.36 16.07 21.187 15.894L18.653 13.36C18.653 13.36 24.853 8.68099 25.427 8.10699C26.012 7.52199 26.267 6.85799 26.184 6.13499C26.119 5.56599 25.835 4.98199 25.428 4.57599C25.173 4.34199 24.484 3.79999 23.6 3.79999C23.174 3.79999 22.534 3.93399 21.894 4.57399C20.689 5.77899 16.631 11.339 16.631 11.339L14.107 8.81399C13.788 8.49499 13.458 8.33999 13.1 8.33999C12.486 8.33999 11.996 8.81099 11.994 8.81399L7.744 13.064C6.749 14.06 7.572 15.01 7.744 15.187L14.81 22.253C15.145 22.581 15.479 22.74 15.831 22.74C16.435 22.74 16.934 22.26 16.937 22.257Z" fill="var(--primary-color)"></path>
@@ -248,6 +287,23 @@
     <script src="{% static 'template.js' %}"></script>
 
     <script>
+        function select_change() {
+            if(document.getElementById('expire_select').value === "13") {
+                document.getElementById('custom_expire').style.display = "block";
+            }
+            else {
+                document.getElementById('custom_expire').style.display = "none";
+            }
+        }
+
+        function another_receiver() {
+            if (document.getElementById('flexCheckDefault').checked) {
+                document.getElementById('another_address_form').style.display = "block";
+            } else {
+                document.getElementById('another_address_form').style.display = "none";
+            }
+        }
+
         $(".currencyField").keyup(function(){ //input[name='calc']
          let convFrom;
          if($(this).prop("name") == "eth") {
