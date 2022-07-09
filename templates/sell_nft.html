@@ -101,33 +101,37 @@
                            <div class="card-body">
                               <div class="row g-3">
                                  <div class="col-lg-4 col-md-12">
-                                       <img class="img-fluid rounded-3 w-100" src="assets/images/product/1.jpg" alt="title">
+                                       <img class="img-fluid rounded-3 w-100" src="{{ image_url }}" alt="title">
                                  </div>
                                  <div class="col-lg-8 col-md-12">
                                     <div class="px-lg-4">
-                                       <h3 class="mb-0"><strong>Human Art</strong></h3>
-                                       <a class="card-product-collection mb-2 d-block" href="#">
-                                          <p class="d-flex align-items-center mb-2">
-                                                Super_color 
-                                                <span class="ms-2">
-                                                   <i class="bi bi-check-circle-fill color-light-success"></i>
-                                                </span>
-                                          </p>
-                                       </a>
-                                       <span class="lead mt-3 d-block">Current Price</span>
+                                       <h3 class="mb-0"><strong>{{ title }}</strong></h3>
+                                       <span style="margin-top: 4rem;padding-top: 10px;" class="lead mt-3 d-block">Price</span>
                                        <div class="card-porduct-price d-flex align-items-center mb-3 color-price-up">
                                           <h4 class="d-flex align-items-center">
-                                             <span class="me-1">
-                                                <i class="bi bi-currency-bitcoin color-price-up"></i>
-                                             </span>
-                                             0.008 ETH
-                                          </h4>
-                                          <h4 class="ms-2">≈$26.69</h4>
+                                              <input type="number" name="eth" class="currencyField form-control bg-transprant" placeholder="ETH">
+                                          </h4><h4 class="ms-2">≈ $</h4>
+                                          <h4 id="price" class="ms-2"></h4>
                                        </div>
                                        <div class="d-flex align-items-top flex-wrap">
                                           <div class="pe-3">
-                                                <span class="lead">Auction ending in</span>
-                                                <h2 class="mb-3 color-price-down" id="bidtime1"> 15:27:31</h2>
+                                                <div style="margin-bottom: 21px;" class="input-group">
+                                                    <span class="input-group-text">Expires</span>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option value="1" selected>1 minute</option>
+                                                        <option value="2">10 minute</option>
+                                                        <option value="3">1 Hour</option>
+                                                        <option value="4">1 Day</option>
+                                                        <option value="5">3 Days</option>
+                                                        <option value="6">7 Days</option>
+                                                        <option value="7">30 Days</option>
+                                                        <option value="8">3 Months</option>
+                                                        <option value="9">6 Months</option>
+                                                        <option value="10">1 Year</option>
+                                                        <option value="11">2 Years</option>
+                                                        <option value="12">3 Years</option>
+                                                    </select>
+                                               </div>
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#walletconnect" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn m-1">
                                                    <span class="me-2">
                                                          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,188 +140,25 @@
                                                             <path d="M25.78 4.21999C25.68 4.12999 24.82 3.29999 23.6 3.29999C23.08 3.29999 22.3 3.45999 21.54 4.21999C20.2 5.55999 17.17 9.73999 16.57 10.57L14.46 8.45999C13.99 7.98999 13.52 7.83999 13.1 7.83999C12.26 7.83999 11.64 8.45999 11.64 8.45999L7.39 12.71C5.98 14.12 7.39 15.54 7.39 15.54L14.46 22.61C14.94 23.08 15.41 23.24 15.83 23.24C16.66 23.24 17.29 22.61 17.29 22.61L21.54 18.36C22.95 16.95 21.54 15.54 21.54 15.54L19.42 13.42C20.22 12.84 24.43 9.80999 25.78 8.45999C27.33 6.90999 26.63 5.06999 25.78 4.21999ZM8.11 14.84C7.79 14.5 7.53 13.98 8.1 13.41L12.33 9.17999C12.44 9.07999 12.77 8.83999 13.1 8.83999C13.18 8.83999 13.42 8.83999 13.76 9.16999L14.46 9.87999L8.81 15.54L8.11 14.84ZM13.76 20.49L9.51 16.24L15.17 10.59L19.41 14.83L13.76 20.49ZM20.12 15.54L20.82 16.23C21.139 16.57 21.4 17.09 20.83 17.66L16.59 21.9C16.53 21.95 16.18 22.24 15.83 22.24C15.75 22.24 15.51 22.24 15.17 21.9L14.46 21.19L20.12 15.54ZM25.07 7.75999C23.66 9.16999 18.71 12.71 18.71 12.71L17.29 11.29C17.29 11.29 20.83 6.33999 22.24 4.92999C22.71 4.45999 23.19 4.29999 23.6 4.29999C24.441 4.29999 25.071 4.92999 25.071 4.92999C25.071 4.92999 26.49 6.33999 25.07 7.75999ZM21 24H7C5 24 5 26 5 26V28H23V26C23 24 21 24 21 24ZM22 27H6V26.01C6.01 25.55 6.19 25 7 25H20.99C21.45 25.01 22 25.2 22 26V27V27Z" fill="var(--text-color)"></path>
                                                          </svg>
                                                    </span>
-                                                   PLACE BID
+                                                   PLACE SELL ORDER
                                                 </a>
-                                                <a href="bid.html" class="d-inline-flex align-items-center justify-content-center border border-primary py-2 px-4 rounded-pill ct-btn m-1">
-                                                   <span class="me-2">
-                                                   <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                      <path d="M34.81 12L29.66 24H9.61L9.94 23.01L5.81 12H34.81Z" fill="var(--primary-color)"></path>
-                                                      <path opacity="0.8" d="M29.66 24L36.52 8H8.5L9.26 10H33.48L28.34 22H11.69L5.69 6H0V8H4.31L9.94 23.01L9.61 24L8.05 28.68C7.95 28.99 8 29.32 8.19 29.58C8.38 29.85 8.68 30 9 30H12C12 32.21 13.79 34 16 34C18.21 34 20 32.21 20 30H24C24 32.21 25.79 34 28 34C30.21 34 32 32.21 32 30C32 27.79 30.21 26 28 26C26.52 26 25.23 26.8 24.54 28H19.46C18.77 26.8 17.48 26 16 26C14.52 26 13.23 26.8 12.54 28H10.39L11.72 24H29.66ZM28 28C29.1 28 30 28.9 30 30C30 31.1 29.1 32 28 32C26.9 32 26 31.1 26 30C26 28.9 26.9 28 28 28ZM16 28C17.1 28 18 28.9 18 30C18 31.1 17.1 32 16 32C14.9 32 14 31.1 14 30C14 28.9 14.9 28 16 28Z" fill="var(--text-color)"></path>
-                                                   </svg>
-                                                   </span>
-                                                   BUY NOW
-                                                </a>
-                                          </div>
-                                          <div class="mt-2 ps-lg-5">
-                                             <div class="d-flex align-items-center ps-0 ps-md-3 mb-3">
-                                                <img src="assets/images/author/avatar1.svg" data-bs-toggle="tooltip" title="" alt="Avatar" class="rounded-circle img-thumbnail avatar lg" data-original-title="Avatar Name" data-bs-original-title="">
-                                                <div class="ms-3">
-                                                   <a href="#" title="">Creator</a>
-                                                   <p class="mb-0 fw-bold">Freakypencil</p>
-                                                </div>
-                                             </div>
-                                             <div class="d-flex align-items-center ps-0 ps-md-3">
-                                                <img src="assets/images/author/avatar1.svg" data-bs-toggle="tooltip" title="" alt="Avatar" class="rounded-circle img-thumbnail avatar lg" data-original-title="Avatar Name" data-bs-original-title="">
-                                                <div class="ms-3">
-                                                   <a href="#" title="">Owner</a>
-                                                   <p class="mb-0 fw-bold">@Freakypencil</p>
-                                                </div>
-                                             </div>
                                           </div>
                                        </div>
                                     </div>
                                  </div>
                                  <div class="col-lg-12">
-                                       <h4 class="text-primary">History</h4>
+                                       <h4 class="text-primary">Description</h4>
                                        <div class="mt-3 border border-dashed p-3">
-                                          <p>Human Art dressed in iconic Hand Canvas Carft.</p>
-                                          <p>Meta Netas are handmade Pixelart which will be releasing Various versions of famous national and international Netas.</p>
-                                          <ul>
-                                             <li>Each Meta Neta Will have Maximum 11 Unique versions.</li>
-                                             <li>Holder of 3 or more Meta Netas will be eligible for Air Drop in Future.</li>
-                                          </ul>
+                                          <p>{{ description }}</p>
                                        </div>
                                  </div>
                               </div>
                            </div>
                      </div>
                   </div>
-               </div> 
+               </div>
 
-               <div class="row g-3">
-                  <div class="col-12">
-                     <div class="card">
-                           <div class="card-body">
-                              <ul class="nav nav-tabs tab-body-header rounded d-inline-flex" id="myTab" role="tablist">
-                              <li class="nav-item" role="presentation">
-                                 <button class="nav-link active" id="Properties-tab" data-bs-toggle="tab" data-bs-target="#Properties" type="button"
-                                       role="tab" aria-controls="Properties" aria-selected="false">Properties</button>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="History-tab" data-bs-toggle="tab" data-bs-target="#History" type="button"
-                                       role="tab" aria-controls="History" aria-selected="true">History</button>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="Offers-tab" data-bs-toggle="tab" data-bs-target="#Offers" type="button"
-                                       role="tab" aria-controls="Offers" aria-selected="false">Offers</button>
-                              </li>
-                                 
-                              </ul>
-                              <div class="tab-content mt-4" id="myTabContent">
-                                 <div class="tab-pane fade show active" id="Properties" role="tabpanel" aria-labelledby="Properties-tab">
-                                    <div class="row g-3">
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                             <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Hair Style</h5>
-                                                <h4 class="mb-0">Multi Flower Art</h4>
-                                                <span class="text-muted">15% have this trait</span>
-                                             </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Eye</h5>
-                                                <h4 class="mb-0">Dark Black</h4>
-                                                <span class="text-muted">7% have this trait</span>
-                                          </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Nose</h5>
-                                                <h4 class="mb-0">Big Nose</h4>
-                                                <span class="text-muted">25% have this trait</span>
-                                          </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Mouth</h5>
-                                                <h4 class="mb-0">Smile Dark Lip</h4>
-                                                <span class="text-muted">61% have this trait</span>
-                                          </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Neck</h5>
-                                                <h4 class="mb-0">Gold Chain</h4>
-                                                <span class="text-muted">15% have this trait</span>
-                                          </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Cloth</h5>
-                                                <h4 class="mb-0">Black Color</h4>
-                                                <span class="text-muted">75% have this trait</span>
-                                          </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Paint</h5>
-                                                <h4 class="mb-0">Roof Multi Color</h4>
-                                                <span class="text-muted">85% have this trait</span>
-                                          </a>
-                                       </div>
-                                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                          <a href="#" class="d-flex flex-column border border-dashed p-3">
-                                                <h5 class="text-primary">Color</h5>
-                                                <h4 class="mb-0">Brush Paint</h4>
-                                                <span class="text-muted">95% have this trait</span>
-                                          </a>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="tab-pane fade px-3" id="History" role="tabpanel" aria-labelledby="History-tab">
-                                       <div class="row align-items-center border-bottom py-2">
-                                          <div class="col text-truncate">
-                                             <div class="d-flex align-items-center">
-                                                   <img src="assets/images/author/avatar3.svg" data-bs-toggle="tooltip" title="" alt="Avatar" class="rounded-circle avatar" data-original-title="Avatar Name" data-bs-original-title="">
-                                                   <div class="ms-3">
-                                                      <div><span>Bid placed by</span><a href="collection.html" title="" class="fw-bold"> @therealmanraj</a></div>
-                                                      <p class="mb-0 small text-muted">26 Feb 2022 02:47:19 PM</p>
-                                                   </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-auto">
-                                             <h5 class="mb-0">5.5 ETH</h5>
-                                             <p class="mb-0 small text-end text-muted">3.12 USD</p>
-                                          </div>
-                                       </div>
-                                       <div class="row align-items-center border-bottom py-2">
-                                          <div class="col text-truncate">
-                                             <div class="d-flex align-items-center">
-                                                   <img src="assets/images/author/avatar2.svg" data-bs-toggle="tooltip" title="" alt="Avatar" class="rounded-circle avatar" data-original-title="Avatar Name" data-bs-original-title="">
-                                                   <div class="ms-3">
-                                                      <div><span>Bid placed by</span><a href="collection.html" title="" class="fw-bold"> @NFTKennedy</a></div>
-                                                      <p class="mb-0 small text-muted">25 Feb 2022 07:32:12 PM</p>
-                                                   </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-auto">
-                                             <h5 class="mb-0">5 ETH</h5>
-                                             <p class="mb-0 small text-end text-muted">2.84 USD</p>
-                                          </div>
-                                       </div>
-                                       <div class="row align-items-center border-bottom py-2">
-                                          <div class="col text-truncate">
-                                             <div class="d-flex align-items-center">
-                                                   <img src="assets/images/author/avatar1.svg" data-bs-toggle="tooltip" title="" alt="Avatar" class="rounded-circle avatar" data-original-title="Avatar Name" data-bs-original-title="">
-                                                   <div class="ms-3">
-                                                      <div><span>Listed by</span><a href="collection.html" title="" class="fw-bold"> @Freakypencil</a></div>
-                                                      <p class="mb-0 small text-muted">25 Feb 2022 11:06:02 AM</p>
-                                                   </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-auto">
-                                             <h5 class="mb-0">5 ETH</h5>
-                                             <p class="mb-0 small text-end text-muted">2.84 USD</p>   
-                                          </div>
-                                       </div>
-                                 </div>
-                                 <div class="tab-pane fade" id="Offers" role="tabpanel" aria-labelledby="Offers-tab">
-                                    <h2 class="d-flex text-center justify-content-center align-items-center text-uppercase text-danger">Sorry no more offers available</h2>
-                                 </div>
-                              </div>
-                           </div>
-                     </div>
-                  </div>
+               <div class="row g-1">
                </div>
          </div>
       </div>
@@ -405,6 +246,32 @@
 
     <!-- Jquery Page Js -->
     <script src="{% static 'template.js' %}"></script>
+
+    <script>
+        $(".currencyField").keyup(function(){ //input[name='calc']
+         let convFrom;
+         if($(this).prop("name") == "eth") {
+               convFrom = "eth";
+               convTo = "usd";
+         }
+         else {
+               convFrom = "usd";
+               convTo = "eth";
+         }
+         $.getJSON( "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum",
+            function( data) {
+            var origAmount = parseFloat($("input[name='" + convFrom + "']").val());
+            var exchangeRate = parseInt(data[0].current_price);
+            let amount;
+            if(convFrom == "eth")
+               amount = parseFloat(origAmount * exchangeRate);
+            else
+               amount = parseFloat(origAmount/ exchangeRate);
+            $("input[name='" + convTo + "']").val(amount.toFixed(2));
+            price.innerHTML = amount
+            });
+        });
+    </script>
 
     <style>
       .rounded-md {

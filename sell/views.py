@@ -26,9 +26,10 @@ def sell_nft(request, contract, id):
 
     url = 'https://api.opensea.io/api/v1/asset/{}/{}/?include_orders=false'.format(contract, id)
     headers = {"X-API-KEY": config('OPENSEA')}
+    response = requests.get(url, headers=headers).json()
 
-    response = requests.get(url, headers=headers)
+    image_url = response['image_url']
+    title = response['name']
+    description = response['description']
 
-    print(response.text)
-
-    return render(request, 'sell_nft.html', {'api': config('OPENSEA')})
+    return render(request, 'sell_nft.html', {'api': config('OPENSEA'), 'image_url': image_url, 'title': title, 'description': description})
