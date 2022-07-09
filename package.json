@@ -1,0 +1,22 @@
+{
+  "name": "1inch-nft-marketplace",
+  "version": "1.0.0",
+  "description": "NFT Marketplace powered by the 1inch limit order protocol.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cairoeth/1inch-NFT-Marketplace.git"
+  },
+  "author": "cairoeth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cairoeth/1inch-NFT-Marketplace/issues"
+  },
+  "homepage": "https://github.com/cairoeth/1inch-NFT-Marketplace#readme",
+  "dependencies": {
+    "@1inch/limit-order-protocol": "^2.0.4"
+  }
+}

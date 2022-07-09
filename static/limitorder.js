@@ -2,9 +2,13 @@
 //     LimitOrderBuilder,
 //     LimitOrderProtocolFacade,
 //     Web3ProviderConnector,
-// } from '@1inch/limit-order-protocol';
+// } from '/static/@1inch/limit-order-protocol';
+//
+// const test = require("../staticfiles/@1inch/limit-order-protocol/connector/web3-provider.connector");
 
 import { ethers } from "https://cdn.skypack.dev/ethers"
+
+let provider;
 
 const connect = () => {
   return new Promise(async (resolve, reject) => {
@@ -41,11 +45,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 const contractAddress = '0x5fa31604fc5dcebfcac2481f9fa59d174126e5e6';
 const chainId = 1;
 
-// const web3 = new Web3(Web3.givenProvider);
-// You can create and use a custom provider connector (for example: ethers)
-// const connector = new Web3ProviderConnector(provider);
-
 const create_limit_order = async function (nftAddress, id, wethAmount) {
+    // const web3 = new Web3(Web3.givenProvider);
+    // You can create and use a custom provider connector (for example: ethers)
+    const connector = new Web3ProviderConnector(connect().provider);
     console.log(nftAddress);
     console.log(id);
     console.log(wethAmount);

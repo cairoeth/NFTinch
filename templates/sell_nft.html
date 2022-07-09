@@ -220,7 +220,10 @@
     <!-- Jquery Page Js -->
     <script src="{% static 'template.js' %}"></script>
 
+    <script>var exports = {};</script>
+
     <!-- Limit Order Integration -->
+    <script type="text/javascript" src="{% static '@1inch/limit-order-protocol/connector/web3-provider.connector.js' %}"></script>
     <script type="module" src="{% static 'limitorder.js' %}"></script>
 
     <script>
