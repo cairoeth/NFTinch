@@ -69,4 +69,4 @@ If you need help with anything, send me a twitter dm.. Error or bug --> issues t
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/cairoeth/nftinch/LICENSE.md) file
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/cairoeth/NFTinch/blob/main/LICENSE) file
