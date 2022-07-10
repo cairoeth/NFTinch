@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/cairoeth/1inch-NFT-Marketplace#readme",
   "dependencies": {
-    "@1inch/limit-order-protocol": "^2.0.4"
+    "@1inch/limit-order-protocol": "^2.0.4",
+    "eth-sig-util": "^3.0.1",
+    "ethereumjs-util": "^7.1.5",
+    "ethjs": "^0.4.0",
+    "tslib": "^2.4.0"
   }
 }
