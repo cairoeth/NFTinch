@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.views.generic.base import TemplateView
 from home.views import index
 from sell.views import sell, sell_nft
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('buy/', index),
     path('sell/', sell),
+    path('orders/', TemplateView.as_view(template_name='orders.html'), name='orders'),
+    path('activity/', TemplateView.as_view(template_name='activity.html'), name='activity'),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('sell/<str:contract>/<int:id>/', sell_nft),
 ]

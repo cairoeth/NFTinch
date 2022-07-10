@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 import requests
 from decouple import config
+from sell_nft import process
 
 
 def sell(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-            return redirect('/')
+        return redirect('/')
 
     # if a GET (or any other method) pass to return index
     else:
@@ -18,7 +19,8 @@ def sell(request):
 def sell_nft(request, contract, id):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-            return redirect('/')
+        process(request.POST)
+        return redirect('/buy/')
 
     # if a GET (or any other method) pass to return index
     else:

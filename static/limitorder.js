@@ -15,12 +15,6 @@ class LimitOrderBuilder {
         this.generateSalt = generateSalt;
     }
 
-    buildOrderSignature(walletAddress, typedData) {
-        const dataHash = TypedDataUtils.hashStruct(typedData.primaryType, typedData.message, typedData.types, true).toString('hex');
-        console.log(dataHash);
-        return this.providerConnector.signTypedData(walletAddress, typedData, dataHash);
-    }
-
     buildLimitOrderTypedData(order, domainName = "1inch Limit Order Protocol") {
         return {
             primaryType: 'Order',
@@ -115,33 +109,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 const create_limit_order = async function (nftAddress, id, wethAmount) {
     // const web3 = new Web3(Web3.givenProvider);
     // You can create and use a custom provider connector (for example: ethers)
-    const connector = new Web3ProviderConnector(connect().provider);
-    console.log(nftAddress);
-    console.log(id);
-    console.log(wethAmount);
-
-    const limitOrderBuilder = new LimitOrderBuilder(
-        contractAddress,
-        chainId,
-        connector
-    );
-
-    const limitOrder = limitOrderBuilder.buildLimitOrder({
-        makerAssetAddress: nftAddress,
-        takerAssetAddress: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-        makerAddress: document.getElementById("current_address").innerText,
-        receiverAddress: document.getElementById("current_address").innerText,
-        takerAmount: wethAmount,
-        makerAssetData: "0x" + id,
-    });
-
-    const limitOrderTypedData = limitOrderBuilder.buildLimitOrderTypedData(limitOrder);
-
-    const limitOrderSignature = limitOrderBuilder.buildOrderSignature(document.getElementById("current_address").innerText, limitOrderTypedData);
-
-    console.log(limitOrderSignature);
+    // const connector = new Web3ProviderConnector(connect().provider);
 };
 
 document.getElementById("sell_submit").onclick = function() {
-    create_limit_order(document.getElementById('contract_value').value, document.getElementById('id_value').value, document.getElementById('eth_value').value);
-};
+    document.getElementById("form").submit();
+}

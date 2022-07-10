@@ -42,3 +42,8 @@ venv
 staticfiles
 
 db.sqlite3
+
+# ignore these files due to private keys (todo)
+buy_nft.py
+1inch_orders.py
+sell_nft.py

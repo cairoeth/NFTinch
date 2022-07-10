@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>NFT Marketplace - 1inch</title>
-    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"> <!-- Favicon-->
+    <link rel="icon" href="{% static 'favicon.ico' %}"> <!-- Favicon-->
 
     <!-- Project css file -->
     <link rel="stylesheet" href="{% static 'css/custom.style.min.css' %}">
 </head>
-<body>
+<body style="background-color: #080b13">
     <div id="IUC" class="theme-blue">
         
       <!-- Top Header -->
       <nav class="navbar navbar-expand-xl py-lg-2 lp-menu">
          <div class="container py-2 rounded">
-            <a class="navbar-brand pt-2 order-1" href="/" title="Logo">
+            <a class="navbar-brand pt-2 order-1" href="/buy" title="Logo">
                <img src="https://cryptologos.cc/logos/1inch-1inch-logo.png" alt="1inch" width="50px" height="50px">
                <!--<span class="fw-bold  fs-5 px-2">1inch</span>-->
             </a>
@@ -34,10 +34,20 @@
                   </button>
                </div>
             </div>
-            <div class="collapse navbar-collapse order-3 order-md-3 order-xl-2" id="navbarSupportedContent">
+             <div class="collapse navbar-collapse order-3 order-md-3 order-xl-2" id="navbarSupportedContent">
                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link me-2 lead" href="/">Buy</a></li>
-                  <li class="nav-item"><a class="nav-link me-2 lead active" href="/sell">Sell</a></li>
+                   <li class="nav-item"><a class="nav-link me-2 lead" href="">Home</a></li>
+                   <li class="nav-item"><a class="nav-link me-2 lead" href="">Explore</a></li>
+                   <li class="nav-item"><a class="nav-link me-2 lead" href="/buy">Buy</a></li>
+                   <li class="nav-item"><a class="nav-link me-2 lead active" href="/sell">Sell</a></li>
+                   <li class="nav-item"><a class="nav-link me-2 lead" href="/sell">Orders</a></li>
+                   <li class="nav-item dropdown">
+                       <a class="nav-link me-2 lead dropdown-toggle p-xl-2" href="#" id="stasnavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Stats</a>
+                       <ul class="dropdown-menu" aria-labelledby="stasnavbarDropdown">
+                           <li><a class="dropdown-item" href="../../html/dist/ranking.html">Ranking</a></li>
+                           <li><a class="dropdown-item" href="activity.html">Activity</a></li>
+                       </ul>
+                   </li>
                </ul>
             </div>
          </div>
@@ -184,8 +194,8 @@
                            <div class="input-group">
                               <span class="input-group-text">Sort By</span>
                               <select class="form-select" aria-label="Default select example">
-                                 <option selected>Date Listed: Newest</option>
-                                 <option value="1">Date Listed: Oldest</option>
+                                 <option selected>Date Minted: Newest</option>
+                                 <option value="1">Date Minted: Oldest</option>
                                  <option value="2">Price: Highest</option>
                                  <option value="3">Price: Lowest</option>
                               </select>
@@ -223,74 +233,6 @@
                         </nav>
                      </div>
                   </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <!-- wallet Connect-->
-      <div class="modal fade" id="walletconnect" tabindex="-1"  aria-hidden="true">
-         <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title  fw-bold">Connect to a wallet</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <ul class="list-unstyled">
-                     <li class="mb-3">
-                        <div class="card">
-                           <div class="card-body">
-                              <a href="#" title="Metamask">
-                              <div class="d-flex justify-content-between align-items-center">
-                                 <div class="info-wallet lead">
-                                    Metamask
-                                 </div>
-                                 <div class="icon-wallet">
-                                    <img src="../dist/assets/images/wallet/metamask.svg" alt="" class="img-fluid">
-                                 </div>
-                              </div>
-                              </a>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="mb-3">
-                        <div class="card">
-                           <div class="card-body">
-                              <a href="#" title="Binance">
-                              <div class="d-flex justify-content-between align-items-center">
-                                 <div class="info-wallet lead">
-                                    Binance
-                                 </div>
-                                 <div class="icon-wallet">
-                                    <img src="../dist/assets/images/wallet/binance.svg" alt="" class="img-fluid">
-                                 </div>
-                              </div>
-                              </a>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="mb-3">
-                        <div class="card">
-                           <div class="card-body">
-                              <a href="#" title="Binance">
-                              <div class="d-flex justify-content-between align-items-center">
-                                 <div class="info-wallet lead">
-                                    Wazirx
-                                 </div>
-                                 <div class="icon-wallet">
-                                    <img src="../dist/assets/images/wallet/wazirx.svg" alt="" class="img-fluid">
-                                 </div>
-                              </div>
-                              </a>
-                           </div>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-               <div class="modal-footer text-center justify-content-center">
-                  <span class="d-flex justify-content-center w-100">By connecting your wallet, you agree to our</span>
-                  <a href="#" class="text-primary">Terms of Service</a> and  <a href="#" class="text-primary">Privacy Policy</a>
                </div>
             </div>
          </div>
