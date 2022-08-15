@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-  <h4 align="center">NFT Marketplace powered by the 1inch limit order protocol.<br>https://youtu.be/GzVHq74AR-I</h4>
+  <h4 align="center">NFT Marketplace powered by the 1inch limit order protocol. BCN HACK (ETH Barcelona) Winner<br>https://youtu.be/GzVHq74AR-I</h4>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
